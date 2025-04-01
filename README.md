@@ -22,10 +22,16 @@ cd pamguide_rust
 
 To run the analysis, you need to have Rust and Cargo installed. You can find installation instructions at [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install).
 
-Once Rust is installed, you can run the project from the `pamguide_rust` directory using Cargo:
+Once Rust is installed, you can build the project from the `pamguide_rust` directory using Cargo:
 
 ```bash
-cargo run --release
+cargo build --release
+```
+
+then to begin an analysis run:
+
+```bash
+target/release/pamguide_rust
 ```
 
 The `--release` flag is recommended for better performance.
