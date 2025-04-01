@@ -2,7 +2,7 @@
 
 This project is a Rust implementation of parts of the PAMGuide MATLAB toolbox. PAMGuide is designed for the analysis of passive acoustic monitoring data, providing tools for calculating calibrated sound levels.
 
-This Rust version aims to provide similar functionality to the original MATLAB PAMGuide, potentially offering performance improvements and cross-platform compatibility.
+This Rust version aims to provide similar functionality to the original MATLAB PAMGuide, potentially offering performance improvements as well as replacing the GUI with a config file which enables preservation of settings.
 
 **Currently Implemented Analysis Types:**
 
@@ -14,7 +14,7 @@ This Rust version aims to provide similar functionality to the original MATLAB P
 To get a local copy of this project, clone the repository using Git:
 
 ```bash
-git clone <repository-url> # Replace <repository-url> with the actual URL
+git clone https://github.com/bbbrandyn/pamguide_rust.git
 cd pamguide_rust
 ```
 
