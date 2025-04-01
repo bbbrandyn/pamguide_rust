@@ -1,0 +1,48 @@
+# Example config.toml for pamguide_rust
+
+# --- REQUIRED SETTINGS ---
+
+# Input/Output Settings
+input_path = "input/path/here" # REQUIRED: Path to WAV file or directory
+output_dir = "output/path/here"  # Directory to save CSV output
+
+# Core Analysis Settings
+analysis_type = "broadband"                # Options: "psd", "broadband"
+environment = "wat"                  # Options: "air", "wat"
+
+# Frequency Settings
+low_cutoff = 1000.0                   # Hz
+high_cutoff = 10000.0                # Hz
+
+
+# --- CALIBRATION SETTINGS (OPTIONAL - enable with calibrated = true) ---
+
+calibrated = true                   # Set to true to enable calibration
+calibration_type = "EE"            # Required if calibrated=true. Options: "TS", "EE", "RC"
+
+# Required if calibration_type = "TS" or "RC"
+mic_hydro_sensitivity = -165.02     # dB re 1 V/uPa (Wat) or 1 V/Pa (Air)
+
+# Required if calibration_type = "TS"
+preamp_gain = 13.98                  # dB
+adc_vpeak = 4.5                  # Volts
+
+# Required if calibration_type = "EE" or "RC"
+system_sensitivity = -164.1        # dB (End-to-end or Recorder sensitivity)
+
+
+# --- DFT/WINDOWING SETTINGS (Defaults are usually reasonable) ---
+
+window_type = "hann"               # Default: "Hann". Options: "Hann", "Hamming", "Blackman", "Rectangular"
+window_length = 1.0                # Default: 1.0
+window_unit = "seconds"            # Default: "seconds". Options: "seconds", "samples"
+overlap_percentage = 50.0          # Default: 50.0 (e.g., 50.0 for 50%)
+
+
+# --- OPTIONAL FEATURES ---
+
+write_csv = true                   # Default: true. Enable/disable CSV output entirely.
+create_batch_summary_file = true   # Default: true. Create concatenated summary file in batch mode.
+# write_individual_batch_csvs = false # Default: false. Write separate CSVs for each file in batch mode.
+welch_factor = 120                 # Optional: Integer factor for Welch time averaging (with default window settings, welch of 120 is equal to averaging every 60s of data)
+timestamp_format = "%Y%m%dT%H%M%SZ" # Optional: Format string for parsing timestamp from filename stem in batch mode (uses chrono format codes)

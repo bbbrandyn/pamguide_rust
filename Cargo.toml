@@ -1,0 +1,27 @@
+[package]
+name = "pamguide_rust"
+version = "0.1.0"
+edition = "2021"
+description = "Rust implementation of PAMGuide for acoustic analysis"
+authors = ["PAMGuide Rust Team"]
+
+[dependencies]
+# Core numerical and signal processing
+ndarray = "0.15"         # For multi-dimensional arrays
+rustfft = "6.1"          # For Fast Fourier Transform
+num-complex = "0.4"      # For complex numbers used by rustfft
+
+# Audio file handling
+hound = "3.5"            # For reading WAV files
+
+# Data processing and output
+csv = "1.3"              # For writing CSV files
+rayon = "1.8"            # For parallel processing
+
+# Configuration and CLI
+toml = "0.8"             # For parsing TOML configuration files
+serde = { version = "1.0", features = ["derive"] } # For serialization/deserialization
+clap = { version = "4.4", features = ["derive"] }  # For command-line argument parsing
+
+# Time handling
+chrono = "0.4"           # For timestamp handling
