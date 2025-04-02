@@ -20,7 +20,7 @@ cd pamguide_rust
 
 ## Running the Project
 
-To run the analysis, you need to have Rust and Cargo installed. You can find installation instructions at [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install).
+To run the analysis, just edit the config.toml file for your settings, and run the executable in the target/release directory. If you want to edit and build the source code, you need to have Rust and Cargo installed. You can find installation instructions at [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install).
 
 Once Rust is installed, you can build the project from the `pamguide_rust` directory using Cargo:
 
