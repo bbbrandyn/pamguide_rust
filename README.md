@@ -42,7 +42,7 @@ The analysis settings are controlled via the `config.toml` file located in the p
 
 Before running the analysis, modify this file to specify:
 
-*   **Input audio file path:** The `.wav` file to be analyzed.
+*   **Input audio file path:** The `.wav` file or directory of files to be analyzed.
 *   **Output directory path:** Where the results (e.g., CSV files) will be saved.
 *   **Analysis parameters:** Such as calibration values, window size, overlap, frequency band limits, etc., specific to the Broadband and PSD calculations.
 
