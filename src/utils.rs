@@ -31,13 +31,8 @@ pub fn calculate_system_sensitivity_db(config: &AnalysisConfig) -> Result<f64, S
             if vadc <= 0.0 {
                 return Err("adc_vpeak must be positive".to_string());
             }
-            // The 20*log10(1/vADC) term is handled by MATLAB's normalization.
-            // Since we normalize manually in read_wav_file, we don't need this term here.
-            // However, the original PAMGuide paper Appendix S1 Eq 4 includes it.
-            // Let's follow the MATLAB code's apparent implementation which omits it.
-            // S = Mh + G
-             Ok(mh + g)
-            // If following paper strictly: Ok(mh + g + 20.0 * (1.0 / vadc).log10())
+            
+             Ok(mh + g + 20.0 * (1.0 / vadc).log10())
 
         }
         CalibrationType::Ee => {
