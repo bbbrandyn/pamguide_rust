@@ -2,7 +2,7 @@
 
 This project is a Rust implementation of parts of the PAMGuide MATLAB toolbox. PAMGuide is designed for the analysis of passive acoustic monitoring data, providing tools for calculating calibrated sound levels.
 
-This Rust version aims to provide similar functionality to the original MATLAB PAMGuide, potentially offering performance improvements and cross-platform compatibility.
+This Rust version aims to provide similar functionality to the original MATLAB PAMGuide, potentially offering performance improvements as well as replacing the GUI with a config file which enables preservation of settings.
 
 **Currently Implemented Analysis Types:**
 
@@ -14,18 +14,24 @@ This Rust version aims to provide similar functionality to the original MATLAB P
 To get a local copy of this project, clone the repository using Git:
 
 ```bash
-git clone <repository-url> # Replace <repository-url> with the actual URL
+git clone https://github.com/bbbrandyn/pamguide_rust.git
 cd pamguide_rust
 ```
 
 ## Running the Project
 
-To run the analysis, you need to have Rust and Cargo installed. You can find installation instructions at [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install).
+To run the analysis, just edit the config.toml file for your settings, and run the executable in the target/release directory. If you want to edit and build the source code, you need to have Rust and Cargo installed. You can find installation instructions at [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install).
 
-Once Rust is installed, you can run the project from the `pamguide_rust` directory using Cargo:
+Once Rust is installed, you can build the project from the `pamguide_rust` directory using Cargo:
 
 ```bash
-cargo run --release
+cargo build --release
+```
+
+then to begin an analysis run:
+
+```bash
+target/release/pamguide_rust
 ```
 
 The `--release` flag is recommended for better performance.
@@ -36,7 +42,7 @@ The analysis settings are controlled via the `config.toml` file located in the p
 
 Before running the analysis, modify this file to specify:
 
-*   **Input audio file path:** The `.wav` file to be analyzed.
+*   **Input audio file path:** The `.wav` file or directory of files to be analyzed.
 *   **Output directory path:** Where the results (e.g., CSV files) will be saved.
 *   **Analysis parameters:** Such as calibration values, window size, overlap, frequency band limits, etc., specific to the Broadband and PSD calculations.
 
